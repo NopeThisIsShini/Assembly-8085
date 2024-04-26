@@ -1,0 +1,9 @@
+# BEGIN 000H
+	   LXI H,2000
+	   LDA 2001
+	   MOV B,M
+	   SUB M
+	   STA 2002
+	   HLT
+# ORG 2000H
+# DB 07H,04H

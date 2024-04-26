@@ -1,0 +1,17 @@
+ 	   XRA A
+	   LXI H,2000
+	   MOV C,M
+	   LXI H,2001
+	   MOV A,M
+	   MVI D,00H
+
+REP:	   SUB C
+	   INR D 
+	   CMP C
+	   JNC REP
+	   STA 2039 // REMINDER
+	   MOV A,D
+	   STA 2040//QUOTIENT
+	   HLT
+# ORG 2000H
+# DB 03H,0FH

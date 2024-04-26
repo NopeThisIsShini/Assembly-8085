@@ -1,0 +1,24 @@
+# BEGIN 0000H
+	   XRA A
+	   LXI H,2000
+	   MOV A,M
+	   MVI C,03
+
+REP:	   INX H
+	   ADD M
+	   DCR C
+	   JNZ REP
+	   STA 2500
+	   MVI B,04
+	   MVI E,00
+
+LOOP:	   SUB B
+	   INR E
+	   CMP B
+	   JNC LOOP
+	   STA 2700 // REMINDER
+	   MOV A,E
+	   STA 2600 // QUOTIENT
+	   HLT
+# ORG 2000H
+# DB 02H,03H,09H,0DH
